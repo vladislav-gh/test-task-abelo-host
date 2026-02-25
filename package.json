@@ -6,7 +6,9 @@
         "dev": "next dev --webpack",
         "build": "next build --webpack",
         "start": "next start",
-        "lint": "eslint",
+        "prepare": "husky",
+        "lint": "eslint --fix --max-warnings=0",
+        "lint:check": "eslint",
         "lint:styles": "stylelint \"**/*.{css,scss}\" --fix",
         "lint:styles:check": "stylelint \"**/*.{css,scss}\"",
         "format": "prettier . --write",
@@ -26,6 +28,8 @@
         "eslint": "^9",
         "eslint-config-next": "16.1.6",
         "eslint-config-prettier": "^10.1.8",
+        "husky": "^9.1.7",
+        "lint-staged": "^16.2.7",
         "prettier": "^3.8.1",
         "sass": "^1.97.3",
         "stylelint": "^17.3.0",
@@ -33,5 +37,18 @@
         "stylelint-config-standard-scss": "^17.0.0",
         "stylelint-order": "^7.0.1",
         "typescript": "^5"
+    },
+    "lint-staged": {
+        "*.{js,jsx,ts,tsx}": [
+            "prettier --write",
+            "eslint --fix --max-warnings=0"
+        ],
+        "*.{css,scss}": [
+            "stylelint --fix",
+            "prettier --write"
+        ],
+        "*.{json,md}": [
+            "prettier --write"
+        ]
     }
 }
