@@ -1,0 +1,14 @@
+node_modules
+dist
+build
+coverage
+**/.next/**
+**/_next/**
+*.min.js
+*.min.css
+*.gen.js
+*.gen.ts
+pnpm-lock.yaml
+pnpm-workspace.yaml
+yarn.lock
+package-lock.json
