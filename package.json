@@ -7,6 +7,8 @@
         "build": "next build --webpack",
         "start": "next start",
         "lint": "eslint",
+        "lint:styles": "stylelint \"**/*.{css,scss}\" --fix",
+        "lint:styles:check": "stylelint \"**/*.{css,scss}\"",
         "format": "prettier . --write",
         "format:check": "prettier . --check"
     },
@@ -26,6 +28,10 @@
         "eslint-config-prettier": "^10.1.8",
         "prettier": "^3.8.1",
         "sass": "^1.97.3",
+        "stylelint": "^17.3.0",
+        "stylelint-config-recess-order": "^7.6.1",
+        "stylelint-config-standard-scss": "^17.0.0",
+        "stylelint-order": "^7.0.1",
         "typescript": "^5"
     }
 }
