@@ -2,6 +2,9 @@ import type { NextConfig } from "next";
 
 const nextConfig: NextConfig = {
     reactCompiler: true,
+    sassOptions: {
+        additionalData: '@use "@/styles/index" as *;',
+    },
     webpack(config) {
         const fileLoaderRule = config.module.rules.find((rule: { test: { test: (arg0: string) => unknown } }) =>
             rule.test?.test?.(".svg")

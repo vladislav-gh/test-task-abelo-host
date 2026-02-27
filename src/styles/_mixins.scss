@@ -1,0 +1,26 @@
+@use "sass:map";
+@use "vars" as *;
+@use "functions" as *;
+
+@mixin media($breakpoint) {
+    $value: map.get($breakpoints, $breakpoint);
+
+    @if $value {
+        @media (width >= $value) {
+            @content;
+        }
+    } @else {
+        @error "Undefined breakpoint value: #{$breakpoint}. Available breakpoints: #{map.keys($breakpoints)}.";
+    }
+}
+
+@mixin text($size) {
+    $value: map.get($font-sizes, $size);
+
+    @if $value {
+        font-size: f-font-size($size);
+        line-height: f-line-height($size);
+    } @else {
+        @error "Undefined font size value: #{$size}. Available font sizes: #{map.keys($font-sizes)}.";
+    }
+}

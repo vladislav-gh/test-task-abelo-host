@@ -1,0 +1,21 @@
+@use "sass:list";
+@use "vars" as *;
+
+:root {
+    @each $key, $value in $breakpoints {
+        --breakpoint-#{$key}: #{$value};
+    }
+
+    @each $key, $value in $colors {
+        --color-#{$key}: #{$value};
+    }
+
+    @each $key, $value in $fonts {
+        --font-#{$key}: #{$value};
+    }
+
+    @each $key, $value in $font-sizes {
+        --font-size-#{$key}: #{list.nth($value, 1)};
+        --line-height-#{$key}: #{list.nth($value, 2)};
+    }
+}

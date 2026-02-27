@@ -1,0 +1,52 @@
+@use "sass:map";
+@use "vars" as *;
+
+@function f-breakpoint($name) {
+    $value: map.get($breakpoints, $name);
+
+    @if $value {
+        @return var(--breakpoint-#{$name});
+    } @else {
+        @error "Undefined breakpoint value: #{$name}. Available breakpoints: #{map.keys($breakpoints)}.";
+    }
+}
+
+@function f-color($name) {
+    $value: map.get($colors, $name);
+
+    @if $value {
+        @return var(--color-#{$name});
+    } @else {
+        @error "Undefined color value: #{$name}. Available colors: #{map.keys($colors)}.";
+    }
+}
+
+@function f-font($name) {
+    $value: map.get($fonts, $name);
+
+    @if $value {
+        @return var(--font-#{$name});
+    } @else {
+        @error "Undefined font value: #{$name}. Available fonts: #{map.keys($fonts)}.";
+    }
+}
+
+@function f-font-size($name) {
+    $value: map.get($font-sizes, $name);
+
+    @if $value {
+        @return var(--font-size-#{$name});
+    } @else {
+        @error "Undefined font size value: #{$name}. Available font sizes: #{map.keys($font-sizes)}.";
+    }
+}
+
+@function f-line-height($name) {
+    $value: map.get($font-sizes, $name);
+
+    @if $value {
+        @return var(--line-height-#{$name});
+    } @else {
+        @error "Undefined line height value: #{$name}. Available font sizes: #{map.keys($font-sizes)}.";
+    }
+}

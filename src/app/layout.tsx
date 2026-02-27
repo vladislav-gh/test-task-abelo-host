@@ -1,17 +1,16 @@
 import type { Metadata, Viewport } from "next";
+import type { PropsWithChildren } from "react";
 
-import { Geist, Geist_Mono } from "next/font/google";
+import { Lato } from "next/font/google";
 
 import "@/styles";
 
-const geistSans = Geist({
-    variable: "--font-geist-sans",
+const fontLato = Lato({
+    variable: "--font-lato",
     subsets: ["latin"],
-});
-
-const geistMono = Geist_Mono({
-    variable: "--font-geist-mono",
-    subsets: ["latin"],
+    display: "swap",
+    weight: ["400", "700"],
+    style: ["normal"],
 });
 
 export const metadata: Metadata = {
@@ -50,14 +49,10 @@ export const viewport: Viewport = {
     themeColor: "#222222",
 };
 
-export default function RootLayout({
-    children,
-}: Readonly<{
-    children: React.ReactNode;
-}>) {
+export default function RootLayout({ children }: PropsWithChildren) {
     return (
-        <html lang="en">
-            <body className={`${geistSans.variable} ${geistMono.variable}`}>{children}</body>
+        <html className={fontLato.variable} lang="en">
+            <body>{children}</body>
         </html>
     );
 }
