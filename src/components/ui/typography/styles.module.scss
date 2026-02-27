@@ -1,0 +1,33 @@
+.text {
+    &_title {
+        @include text("2xl");
+
+        @include media(lg) {
+            @include text("3xl");
+        }
+    }
+
+    &_subtitle {
+        @include text(xl);
+
+        @include media(lg) {
+            @include text("2xl");
+        }
+    }
+
+    &_category {
+        @include text(lg);
+
+        @include media(lg) {
+            @include text(xl);
+        }
+    }
+
+    &_body {
+        @include text(md);
+    }
+
+    &_caption {
+        @include text(sm);
+    }
+}

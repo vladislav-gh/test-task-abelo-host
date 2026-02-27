@@ -3,3 +3,4 @@ export * from "./icon";
 export * from "./input";
 export * from "./link";
 export * from "./spinner";
+export * from "./typography";
