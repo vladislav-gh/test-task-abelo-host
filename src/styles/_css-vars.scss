@@ -1,5 +1,6 @@
 @use "sass:list";
 @use "vars" as *;
+@use "functions" as *;
 
 :root {
     @each $key, $value in $breakpoints {
@@ -8,6 +9,7 @@
 
     @each $key, $value in $colors {
         --color-#{$key}: #{$value};
+        --color-#{$key}-rgb: #{f-hex-to-rgb($value)};
     }
 
     @each $key, $value in $fonts {

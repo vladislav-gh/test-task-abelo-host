@@ -1,6 +1,11 @@
 @use "sass:map";
 @use "vars" as *;
 
+@function f-hex-to-rgb($hex) {
+    /* stylelint-disable-next-line scss/no-global-function-names */
+    @return red($hex), green($hex), blue($hex);
+}
+
 @function f-breakpoint($name) {
     $value: map.get($breakpoints, $name);
 
@@ -11,11 +16,15 @@
     }
 }
 
-@function f-color($name) {
+@function f-color($name, $opacity: null) {
     $value: map.get($colors, $name);
 
     @if $value {
-        @return var(--color-#{$name});
+        @if $opacity {
+            @return rgba(var(--color-#{$name}-rgb), $opacity);
+        } @else {
+            @return var(--color-#{$name});
+        }
     } @else {
         @error "Undefined color value: #{$name}. Available colors: #{map.keys($colors)}.";
     }
