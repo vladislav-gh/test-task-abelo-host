@@ -1,0 +1,72 @@
+.button {
+    position: relative;
+    z-index: 0;
+    display: inline-flex;
+    gap: 0.25rem;
+    align-items: center;
+    justify-content: center;
+    height: 2.5rem;
+    padding: 0 1.5rem;
+    overflow: hidden;
+    font-size: 0.875rem;
+    font-weight: bold;
+    line-height: 1;
+    text-align: center;
+    letter-spacing: 0;
+    white-space: nowrap;
+    text-decoration: none;
+    appearance: none;
+    cursor: pointer;
+    outline: none;
+    border: 0;
+    border-radius: 0.75rem;
+    box-shadow: none;
+    transition:
+        color $transition,
+        background-color $transition,
+        opacity $transition;
+
+    @include media(lg) {
+        height: 3rem;
+        font-size: f-font-size(md);
+    }
+
+    &_primary {
+        color: f-color(text);
+        background-color: f-color(secondary);
+
+        @include media(lg) {
+            &:not(:disabled):hover {
+                background-color: f-color(accent);
+            }
+        }
+    }
+
+    &_secondary {
+        color: f-color(text);
+        background-color: transparent;
+        border: 1px solid f-color(text);
+
+        @include media(lg) {
+            &:not(:disabled):hover {
+                color: f-color(primary);
+                background-color: f-color(text);
+            }
+        }
+    }
+
+    &_block {
+        display: flex;
+        width: 100%;
+    }
+
+    &_loading {
+        cursor: wait;
+    }
+
+    &:disabled {
+        cursor: not-allowed;
+        user-select: none;
+        opacity: 0.5;
+    }
+}
