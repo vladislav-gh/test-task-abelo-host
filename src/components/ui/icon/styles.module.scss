@@ -1,0 +1,35 @@
+.icon {
+    display: block;
+    flex-shrink: 0;
+    width: 1em;
+    max-width: none;
+    height: 1em;
+    line-height: 1;
+
+    path,
+    circle {
+        vector-effect: non-scaling-stroke;
+    }
+
+    &_size {
+        &-xs {
+            font-size: 1rem;
+        }
+
+        &-sm {
+            font-size: 1.25rem;
+        }
+
+        &-md {
+            font-size: 1.5rem;
+        }
+
+        &-lg {
+            font-size: 1.75rem;
+        }
+
+        &-xl {
+            font-size: 2rem;
+        }
+    }
+}
