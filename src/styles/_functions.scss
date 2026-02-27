@@ -1,9 +1,9 @@
 @use "sass:map";
+@use "sass:color";
 @use "vars" as *;
 
 @function f-hex-to-rgb($hex) {
-    /* stylelint-disable-next-line scss/no-global-function-names */
-    @return red($hex), green($hex), blue($hex);
+    @return color.channel($hex, "red", rgb), color.channel($hex, "green", rgb), color.channel($hex, "blue", rgb);
 }
 
 @function f-breakpoint($name) {
