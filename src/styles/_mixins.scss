@@ -24,3 +24,15 @@
         @error "Undefined font size value: #{$size}. Available font sizes: #{map.keys($font-sizes)}.";
     }
 }
+
+@mixin container() {
+    width: 100%;
+    max-width: 100%;
+    padding: 0 0.75rem;
+    margin: 0 auto;
+
+    @include media(lg) {
+        max-width: 80rem;
+        padding: 0 1rem;
+    }
+}
