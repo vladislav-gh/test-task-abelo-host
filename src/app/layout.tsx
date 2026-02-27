@@ -3,6 +3,8 @@ import type { PropsWithChildren } from "react";
 
 import { Lato } from "next/font/google";
 
+import { Header } from "@/components/header";
+
 import "@/styles";
 
 const fontLato = Lato({
@@ -52,7 +54,10 @@ export const viewport: Viewport = {
 export default function RootLayout({ children }: PropsWithChildren) {
     return (
         <html className={fontLato.variable} lang="en">
-            <body>{children}</body>
+            <body>
+                <Header />
+                {children}
+            </body>
         </html>
     );
 }
