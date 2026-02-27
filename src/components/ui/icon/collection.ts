@@ -5,6 +5,7 @@ import Error404 from "./images/error-404.svg";
 import Error from "./images/error.svg";
 import LogoAbeloHost from "./images/logo-abelo-host.svg";
 import SignIn from "./images/sign-in.svg";
+import SignOut from "./images/sign-out.svg";
 import User from "./images/user.svg";
 
 export const IconsCollection = {
@@ -15,6 +16,7 @@ export const IconsCollection = {
     error: Error,
     logoAbeloHost: LogoAbeloHost,
     signIn: SignIn,
+    signOut: SignOut,
     user: User,
 } as const;
 
