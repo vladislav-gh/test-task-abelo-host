@@ -10,6 +10,7 @@
     "importOrder": [
         "<TYPES>",
         "^@<TYPES>",
+        "^[.]<TYPES>",
         "",
         "<BUILTIN_MODULES>",
         "",
