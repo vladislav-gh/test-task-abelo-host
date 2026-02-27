@@ -55,8 +55,6 @@
 
 .label,
 .error {
-    @include text(sm);
-
     display: block;
     cursor: pointer;
 }
