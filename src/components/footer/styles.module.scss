@@ -1,0 +1,42 @@
+.footer {
+    margin-top: auto;
+    background-color: f-color(secondary, 0.5);
+    backdrop-filter: blur(10px);
+}
+
+.container {
+    @include container;
+
+    display: flex;
+    flex-direction: column;
+    gap: 0.75rem;
+    align-items: center;
+    justify-content: space-between;
+    padding-block: 1rem;
+    text-align: center;
+
+    @include media(md) {
+        flex-direction: row;
+        text-align-last: left;
+    }
+
+    @include media(lg) {
+        gap: 1rem;
+    }
+}
+
+.user {
+    color: f-color(text, 0.5);
+
+    a {
+        font-weight: bold;
+        color: f-color(text, 0.75);
+        transition: color $transition;
+
+        @include media(lg) {
+            &:hover {
+                color: f-color(text);
+            }
+        }
+    }
+}

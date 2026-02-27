@@ -3,6 +3,7 @@ import type { PropsWithChildren } from "react";
 
 import { Lato } from "next/font/google";
 
+import { Footer } from "@/components/footer";
 import { Header } from "@/components/header";
 
 import "@/styles";
@@ -57,6 +58,7 @@ export default function RootLayout({ children }: PropsWithChildren) {
             <body>
                 <Header />
                 {children}
+                <Footer />
             </body>
         </html>
     );
