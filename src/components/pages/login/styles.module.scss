@@ -1,0 +1,24 @@
+.page {
+    display: flex;
+    flex-direction: column;
+    gap: 1.5rem;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+
+    .info {
+        display: flex;
+        flex-direction: column;
+        gap: 0.25rem;
+    }
+
+    .description {
+        opacity: 0.5;
+    }
+
+    .form {
+        width: 100%;
+        max-width: 24rem;
+        text-align: left;
+    }
+}
