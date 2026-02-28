@@ -3,6 +3,7 @@ import CheckRounded from "./images/check-rounded.svg";
 import Envelope from "./images/envelope.svg";
 import Error404 from "./images/error-404.svg";
 import Error from "./images/error.svg";
+import Image from "./images/image.svg";
 import LogoAbeloHost from "./images/logo-abelo-host.svg";
 import SignIn from "./images/sign-in.svg";
 import SignOut from "./images/sign-out.svg";
@@ -14,6 +15,7 @@ export const IconsCollection = {
     envelope: Envelope,
     error404: Error404,
     error: Error,
+    image: Image,
     logoAbeloHost: LogoAbeloHost,
     signIn: SignIn,
     signOut: SignOut,
