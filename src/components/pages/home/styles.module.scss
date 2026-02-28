@@ -1,0 +1,23 @@
+.page {
+    display: flex;
+    flex-direction: column;
+    gap: 1.5rem;
+}
+
+.products {
+    display: grid;
+    gap: 0.75rem;
+
+    @include media(xs) {
+        grid-template-columns: repeat(2, 1fr);
+    }
+
+    @include media(md) {
+        grid-template-columns: repeat(3, 1fr);
+    }
+
+    @include media(lg) {
+        grid-template-columns: repeat(4, 1fr);
+        gap: 1rem;
+    }
+}
