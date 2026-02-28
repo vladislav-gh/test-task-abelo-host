@@ -29,12 +29,13 @@
     @include media(lg) {
         padding: 0 1rem;
 
-        &:not(:disabled, :focus, &_error):hover {
+        &:not(:disabled, :focus, :user-invalid, &_error):hover {
             border-color: f-color("white", 0.25);
         }
     }
 
-    &_error {
+    &_error,
+    &:user-invalid {
         border-color: f-color(error);
     }
 
@@ -43,7 +44,7 @@
         opacity: 0.5;
     }
 
-    &:not(&_error):focus {
+    &:not(:user-invalid, &_error):focus {
         border-color: f-color(accent);
     }
 
