@@ -1,0 +1,9 @@
+.layout {
+    @include container;
+
+    padding-block: 1.5rem;
+
+    @include media(lg) {
+        padding-block: 2.5rem;
+    }
+}

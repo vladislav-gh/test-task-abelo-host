@@ -1,3 +1,1 @@
-export default function Page() {
-    return <main>Login page</main>;
-}
+export { PageLogin as default } from "@/components/pages";

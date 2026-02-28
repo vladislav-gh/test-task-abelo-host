@@ -1,3 +1,1 @@
-export default function NotFound() {
-    return <main>404 Not Found</main>;
-}
+export { Page404 as default } from "@/components/pages";
