@@ -1,0 +1,22 @@
+.form {
+    display: flex;
+    flex-direction: column;
+    gap: 1.5rem;
+    padding: 1rem;
+    background-color: f-color(secondary, 0.25);
+    border-radius: 0.75rem;
+
+    @include media(lg) {
+        padding: 1.5rem;
+    }
+}
+
+.fields {
+    display: flex;
+    flex-direction: column;
+    gap: 1rem;
+}
+
+.error {
+    color: f-color(error);
+}
