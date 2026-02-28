@@ -41,6 +41,7 @@ export function Button({
     className,
     type = "button",
     href,
+    block,
     loading,
     linkProps,
     icon,
@@ -60,7 +61,7 @@ export function Button({
     }
 
     const commonProps = {
-        className: clsx(variantsClassName({ loading, ...restProps }), className),
+        className: clsx(variantsClassName({ block, loading, ...restProps }), className),
     };
 
     if (href) {

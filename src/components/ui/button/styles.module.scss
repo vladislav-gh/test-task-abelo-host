@@ -17,11 +17,12 @@
     text-decoration: none;
     appearance: none;
     cursor: pointer;
-    outline: none;
+    outline: 1px solid transparent;
     border: 0;
     border-radius: 0.75rem;
     box-shadow: none;
     transition:
+        outline $transition,
         color $transition,
         background-color $transition,
         opacity $transition;
@@ -40,6 +41,10 @@
                 background-color: f-color(accent);
             }
         }
+
+        &:focus {
+            outline-color: f-color(accent);
+        }
     }
 
     &_secondary {
@@ -52,6 +57,10 @@
                 color: f-color(primary);
                 background-color: f-color(text);
             }
+        }
+
+        &:focus {
+            outline-color: f-color(text);
         }
     }
 
