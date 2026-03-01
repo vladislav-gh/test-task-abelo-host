@@ -8,11 +8,13 @@ import styles from "./styles.module.scss";
 export function User() {
     const { user } = useUserState(["user"]);
 
-    if (!user) {
+    if (!user?.email) {
         return null;
     }
 
-    <div className={styles.user}>
-        Logged as <Link email="user@mail.com" />
-    </div>;
+    return (
+        <div className={styles.user}>
+            Logged as <Link email={user.email} />
+        </div>
+    );
 }
