@@ -1,5 +1,6 @@
-import styles from "./styles.module.scss";
 import { User } from "./User";
+
+import styles from "./styles.module.scss";
 
 export function Footer() {
     return (

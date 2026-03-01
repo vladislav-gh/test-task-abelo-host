@@ -2,6 +2,7 @@ import { getProducts, ProductCard } from "@/components/products";
 import { Text } from "@/components/ui";
 
 import { PageLayout } from "../Layout";
+
 import styles from "./styles.module.scss";
 
 export async function PageHome() {

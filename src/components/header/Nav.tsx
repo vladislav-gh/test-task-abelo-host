@@ -3,6 +3,7 @@
 import { useUserState } from "@/components/user";
 
 import { ButtonAuth } from "./ButtonAuth";
+
 import styles from "./styles.module.scss";
 
 export function Nav() {

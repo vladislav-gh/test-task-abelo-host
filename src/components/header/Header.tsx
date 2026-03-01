@@ -2,6 +2,7 @@ import { Icon, Link } from "@/components/ui";
 import { PAGES } from "@/config";
 
 import { Nav } from "./Nav";
+
 import styles from "./styles.module.scss";
 
 export function Header() {

@@ -2,6 +2,7 @@ import { Button, Icon, Text } from "@/components/ui";
 import { PAGES } from "@/config";
 
 import { PageLayout } from "../Layout";
+
 import styles from "./styles.module.scss";
 
 export function Page404() {

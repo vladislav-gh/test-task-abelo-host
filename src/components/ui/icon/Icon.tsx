@@ -6,6 +6,7 @@ import { cva } from "class-variance-authority";
 import clsx from "clsx";
 
 import { IconsCollection } from "./collection";
+
 import styles from "./styles.module.scss";
 
 type VariantsProps = VariantProps<typeof variants>;
