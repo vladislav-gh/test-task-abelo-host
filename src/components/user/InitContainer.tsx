@@ -9,13 +9,13 @@ import { useUserState } from "./store";
 import { mapUser } from "./utils";
 
 export function UserInitContainer() {
-    const { setUser, setIsInitialized } = useUserState(["setUser", "setIsInitialized"]);
+    const { user, setUser, setIsInitialized } = useUserState(["user", "setUser", "setIsInitialized"]);
 
     const setUserOnLoad = useEffectEvent(() => {
-        actionGetUser().then(user => {
-            if (user) {
-                setUser(mapUser(user));
-            } else {
+        actionGetUser().then(userData => {
+            if (userData) {
+                setUser(mapUser(userData));
+            } else if (user) {
                 setUser(null);
                 actionSignOut();
             }
