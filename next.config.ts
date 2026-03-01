@@ -7,7 +7,10 @@ const nextConfig: NextConfig = {
         additionalData: '@use "@/styles/index" as *;',
     },
     images: {
-        remotePatterns: [{ protocol: "https", hostname: "**.dummyjson.com" }],
+        remotePatterns: [
+            { protocol: "https", hostname: "dummyjson.com" },
+            { protocol: "https", hostname: "cdn.dummyjson.com" },
+        ],
     },
     webpack(config) {
         const fileLoaderRule = config.module.rules.find((rule: { test: { test: (arg0: string) => unknown } }) =>
