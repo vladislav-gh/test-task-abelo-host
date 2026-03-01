@@ -1,3 +1,5 @@
+"use client";
+
 import type { ElProps } from "@/types";
 
 import Image from "next/image";
