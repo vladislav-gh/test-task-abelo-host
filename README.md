@@ -1,8 +1,6 @@
-This is a [Next.js](https://nextjs.org) project bootstrapped with [`create-next-app`](https://nextjs.org/docs/app/api-reference/cli/create-next-app).
-
 ## Getting Started
 
-First, run the development server:
+Run the development server:
 
 ```bash
 npm run dev
@@ -16,21 +14,52 @@ bun dev
 
 Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
 
-You can start editing the page by modifying `app/page.tsx`. The page auto-updates as you edit the file.
+## Quick Start with Docker
 
-This project uses [`next/font`](https://nextjs.org/docs/app/building-your-application/optimizing/fonts) to automatically optimize and load [Geist](https://vercel.com/font), a new font family for Vercel.
+### Using Docker Compose
 
-## Learn More
+The `compose.yml` includes both Node.js and Bun configurations. Run one service at a time to avoid port conflicts.
 
-To learn more about Next.js, take a look at the following resources:
+**Node.js:**
 
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
+```bash
+# Run with Node.js
+docker compose up nextjs-standalone --build
+```
 
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js) - your feedback and contributions are welcome!
+**Bun:**
 
-## Deploy on Vercel
+```bash
+# OR run with Bun
+docker compose up nextjs-standalone-with-bun --build
+```
 
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
+**Stop the application:**
 
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/app/building-your-application/deploying) for more details.
+```bash
+docker compose down
+```
+
+### Using Docker Build
+
+**Node.js:**
+
+```bash
+# Build the image
+docker build -t nextjs-standalone-image .
+
+# Run the container
+docker run -p 3000:3000 nextjs-standalone-image
+```
+
+**Bun:**
+
+```bash
+# Build the image
+docker build -f Dockerfile.bun -t nextjs-standalone-bun-image .
+
+# Run the container
+docker run -p 3000:3000 nextjs-standalone-bun-image
+```
+
+**Open your browser:** Navigate to [http://localhost:3000](http://localhost:3000)
