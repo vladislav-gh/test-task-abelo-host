@@ -68,6 +68,12 @@
     display: none;
 
     @include media(sm) {
-        display: block;
+        display: flex;
+        gap: 0.25rem;
+        align-items: center;
+    }
+
+    &__icon {
+        opacity: 0.5;
     }
 }

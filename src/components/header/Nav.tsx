@@ -1,5 +1,6 @@
 "use client";
 
+import { Icon } from "@/components/ui";
 import { useUserState } from "@/components/user";
 
 import { ButtonAuth } from "./ButtonAuth";
@@ -15,7 +16,12 @@ export function Nav() {
 
     return (
         <div className={styles.nav}>
-            {user && <div className={styles.user}>Name Surname</div>}
+            {user && (
+                <div className={styles.user}>
+                    <Icon className={styles.user__icon} k="user" size="sm" />
+                    {user.firstName} {user.lastName}
+                </div>
+            )}
 
             <ButtonAuth />
         </div>
