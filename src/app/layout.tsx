@@ -39,7 +39,10 @@ export const metadata: Metadata = {
     other: {
         "apple-mobile-web-app-title": "AH Shop",
     },
-    title: "AbeloHost Shop",
+    title: {
+        default: "AbeloHost Shop",
+        template: "%s | AbeloHost Shop",
+    },
     description: "Some description about the shop",
     formatDetection: {
         email: false,
