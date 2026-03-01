@@ -5,6 +5,9 @@ const nextConfig: NextConfig = {
     sassOptions: {
         additionalData: '@use "@/styles/index" as *;',
     },
+    images: {
+        remotePatterns: [{ protocol: "https", hostname: "**.dummyjson.com" }],
+    },
     webpack(config) {
         const fileLoaderRule = config.module.rules.find((rule: { test: { test: (arg0: string) => unknown } }) =>
             rule.test?.test?.(".svg")
