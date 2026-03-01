@@ -58,7 +58,7 @@ export async function signIn(_prevState: ActionSignInState, formData: FormData):
 
         revalidatePath("/");
 
-        return { success: true };
+        return { success: true, data };
     } catch (error) {
         return {
             success: false,

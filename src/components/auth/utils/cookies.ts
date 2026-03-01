@@ -4,7 +4,7 @@ import type { ResponseCookie } from "next/dist/compiled/@edge-runtime/cookies";
 
 import { cookies } from "next/headers";
 
-import { COOKIES_KEY_ACCESS_TOKEN, COOKIES_KEY_REFRESH_TOKEN } from "./config";
+import { COOKIES_KEY_ACCESS_TOKEN, COOKIES_KEY_REFRESH_TOKEN } from "../config";
 
 export async function authCookiesSet(accessToken: string, refreshToken: string) {
     const cookiesStore = await cookies();

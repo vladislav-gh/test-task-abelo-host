@@ -5,6 +5,7 @@ import { Lato } from "next/font/google";
 
 import { Footer } from "@/components/footer";
 import { Header } from "@/components/header";
+import { UserInitContainer } from "@/components/user";
 
 import "@/styles";
 
@@ -59,6 +60,7 @@ export default function RootLayout({ children }: PropsWithChildren) {
     return (
         <html className={fontLato.variable} lang="en">
             <body>
+                <UserInitContainer />
                 <Header />
                 {children}
                 <Footer />
