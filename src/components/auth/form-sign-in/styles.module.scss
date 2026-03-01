@@ -18,5 +18,13 @@
 }
 
 .error {
+    display: flex;
+    gap: 0.25rem;
+    align-items: flex-start;
     color: f-color(error);
+
+    & &__icon {
+        position: relative;
+        top: -1px;
+    }
 }

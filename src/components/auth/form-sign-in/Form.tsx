@@ -7,7 +7,7 @@ import { useActionState, useEffect, useEffectEvent } from "react";
 import { useRouter } from "next/navigation";
 import clsx from "clsx";
 
-import { Button, Input, Text } from "@/components/ui";
+import { Button, Icon, Input, Text } from "@/components/ui";
 import { mapUser, useUserState } from "@/components/user";
 import { PAGES } from "@/config";
 
@@ -68,6 +68,7 @@ export function FormSignIn({ className, ...restProps }: FormSignInProps) {
 
             {state.error?.message && (
                 <Text className={styles.error} variant="caption">
+                    <Icon className={styles.error__icon} k="error" size="xs" />
                     {state.error.message}
                 </Text>
             )}
