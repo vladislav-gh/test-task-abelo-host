@@ -1,6 +1,7 @@
 import type { AxiosError, InternalAxiosRequestConfig } from "axios";
 
 import axios from "axios";
+import axiosRetry from "axios-retry";
 
 import { authCookiesGet, authCookiesRemove, authCookiesSet } from "@/components/auth";
 import { IS_SERVER } from "@/config";
@@ -10,6 +11,16 @@ import { fetchAuthRefresh } from "./requests";
 
 export const apiClient = axios.create({
     baseURL: API_URL,
+});
+
+axiosRetry(apiClient, {
+    retries: 2,
+    retryDelay: axiosRetry.exponentialDelay,
+    retryCondition: error =>
+        error.response?.status !== 401 &&
+        (axiosRetry.isNetworkError(error) ||
+            error.code === "ECONNABORTED" ||
+            !!(error.response && error.response.status >= 500)),
 });
 
 if (IS_SERVER) {
