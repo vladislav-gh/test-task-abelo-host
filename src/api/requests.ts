@@ -6,6 +6,7 @@ import {
     AuthMeResponse,
     AuthRefreshDTO,
     AuthRefreshResponse,
+    ProductsDTO,
     ProductsResponse,
 } from "./types";
 
@@ -16,4 +17,4 @@ export const fetchAuthMe = () => apiClient.get<AuthMeResponse>(ENDPOINTS.auth.me
 export const fetchAuthRefresh = (data?: AuthRefreshDTO) =>
     apiClient.post<AuthRefreshResponse>(ENDPOINTS.auth.refresh, data);
 
-export const fetchProducts = () => apiClient.get<ProductsResponse>(ENDPOINTS.products);
+export const fetchProducts = (params?: ProductsDTO) => apiClient.get<ProductsResponse>(ENDPOINTS.products, { params });

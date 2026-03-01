@@ -21,3 +21,9 @@
         gap: 1rem;
     }
 }
+
+.productsEmpty {
+    grid-column: 1 / -1;
+    text-align: center;
+    opacity: 0.5;
+}

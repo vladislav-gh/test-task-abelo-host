@@ -4,7 +4,10 @@ export interface Product {
     category: string;
     price: number;
     thumbnail: string;
-    images: string[];
+}
+
+export interface ProductsDTO {
+    limit?: number;
 }
 
 export interface ProductsResponse {
