@@ -1,4 +1,4 @@
-import { getProducts, ProductCard } from "@/components/products";
+import { actionGetProducts, ProductCard } from "@/components/products";
 import { Text } from "@/components/ui";
 
 import { PageLayout } from "../Layout";
@@ -6,7 +6,7 @@ import { PageLayout } from "../Layout";
 import styles from "./styles.module.scss";
 
 export async function PageHome() {
-    const products = await getProducts();
+    const products = await actionGetProducts();
 
     return (
         <PageLayout className={styles.page}>

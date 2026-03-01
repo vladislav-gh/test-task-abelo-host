@@ -11,7 +11,7 @@ import { Button, Input, Text } from "@/components/ui";
 import { mapUser, useUserState } from "@/components/user";
 import { PAGES } from "@/config";
 
-import { signIn } from "../actions";
+import { actionSignIn } from "../actions";
 import { SIGN_IN_FIELDS } from "../config";
 
 import styles from "./styles.module.scss";
@@ -20,7 +20,7 @@ export type FormSignInProps = ElProps<"form">;
 
 export function FormSignIn({ className, ...restProps }: FormSignInProps) {
     const router = useRouter();
-    const [state, formAction, isPending] = useActionState<ActionSignInState, FormData>(signIn, {});
+    const [state, formAction, isPending] = useActionState<ActionSignInState, FormData>(actionSignIn, {});
     const { setUser } = useUserState(["setUser"]);
 
     const handleLoginSuccess = useEffectEvent(() => {

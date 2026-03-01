@@ -29,7 +29,7 @@ const signInSchema = z.object({
         ),
 });
 
-export async function signIn(_prevState: ActionSignInState, formData: FormData): Promise<ActionSignInState> {
+export async function actionSignIn(_prevState: ActionSignInState, formData: FormData): Promise<ActionSignInState> {
     const validatedFields = signInSchema.safeParse({
         username: formData.get(SIGN_IN_FIELDS.username.name),
         password: formData.get(SIGN_IN_FIELDS.password.name),
@@ -70,6 +70,6 @@ export async function signIn(_prevState: ActionSignInState, formData: FormData):
     }
 }
 
-export async function signOut() {
+export async function actionSignOut() {
     await authCookiesRemove();
 }

@@ -1,10 +1,10 @@
 import { useUserStore } from "@/components/user";
 
-import { signOut } from "../actions";
+import { actionSignOut } from "../actions";
 
 export function logout() {
     const { setUser } = useUserStore.getState();
 
-    signOut();
+    actionSignOut();
     setUser(null);
 }

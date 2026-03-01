@@ -1,6 +1,6 @@
 import { fetchProducts } from "@/api";
 
-export async function getProducts() {
+export async function actionGetProducts() {
     try {
         const { data } = await fetchProducts({ limit: 12 });
 

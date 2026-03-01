@@ -2,7 +2,7 @@
 
 import { fetchAuthMe } from "@/api";
 
-export async function getUser() {
+export async function actionGetUser() {
     try {
         const { data } = await fetchAuthMe();
 

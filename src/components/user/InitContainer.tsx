@@ -2,9 +2,9 @@
 
 import { useEffect, useEffectEvent } from "react";
 
-import { signOut } from "@/components/auth";
+import { actionSignOut } from "@/components/auth";
 
-import { getUser } from "./actions";
+import { actionGetUser } from "./actions";
 import { useUserState } from "./store";
 import { mapUser } from "./utils";
 
@@ -12,12 +12,12 @@ export function UserInitContainer() {
     const { setUser, setIsInitialized } = useUserState(["setUser", "setIsInitialized"]);
 
     const setUserOnLoad = useEffectEvent(() => {
-        getUser().then(user => {
+        actionGetUser().then(user => {
             if (user) {
                 setUser(mapUser(user));
             } else {
                 setUser(null);
-                signOut();
+                actionSignOut();
             }
 
             setIsInitialized(true);
