@@ -4,6 +4,7 @@ import Image from "next/image";
 import clsx from "clsx";
 
 import { Button, Icon, Text } from "@/components/ui";
+import { useUserState } from "@/components/user";
 
 import styles from "./styles.module.scss";
 
@@ -12,18 +13,11 @@ export interface ProductCardProps extends ElProps<"div"> {
     title: string;
     category?: string;
     price: string | number;
-    canAddToCart?: boolean;
 }
 
-export function ProductCard({
-    className,
-    image,
-    title,
-    category,
-    price,
-    canAddToCart,
-    ...restProps
-}: ProductCardProps) {
+export function ProductCard({ className, image, title, category, price, ...restProps }: ProductCardProps) {
+    const { user } = useUserState(["user"]);
+
     return (
         <div className={clsx(styles.card, className)} {...restProps}>
             <div className={styles.image}>
@@ -43,7 +37,7 @@ export function ProductCard({
                     {price}
                 </Text>
 
-                {canAddToCart && (
+                {user && (
                     <Button icon="cart" block>
                         Add to cart
                     </Button>

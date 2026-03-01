@@ -1,14 +1,16 @@
 "use client";
 
+import { logout } from "@/components/auth";
 import { Button } from "@/components/ui";
+import { useUserState } from "@/components/user";
 import { PAGES } from "@/config";
 
 export function ButtonAuth() {
-    const user = false; // TODO: get real user
+    const { user } = useUserState(["user"]);
 
-    const handleClick = () => {
+    const handleClick = async () => {
         if (user) {
-            // TODO: logout
+            logout();
         }
     };
 
