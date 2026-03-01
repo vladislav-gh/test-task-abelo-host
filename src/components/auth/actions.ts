@@ -72,4 +72,6 @@ export async function actionSignIn(_prevState: ActionSignInState, formData: Form
 
 export async function actionSignOut() {
     await authCookiesRemove();
+
+    revalidatePath("/");
 }
