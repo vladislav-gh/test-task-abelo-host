@@ -3,6 +3,7 @@
 import type { ActionSignInState } from "./types";
 
 import { revalidatePath } from "next/cache";
+import { isAxiosError } from "axios";
 import * as z from "zod";
 
 import { fetchAuthLogin } from "@/api";
@@ -60,10 +61,18 @@ export async function actionSignIn(_prevState: ActionSignInState, formData: Form
 
         return { success: true, data };
     } catch (error) {
+        let message = "Something went wrong. Please try again later.";
+
+        if (isAxiosError(error)) {
+            message = error.response?.data.message ?? message;
+        } else if (error instanceof Error) {
+            message = error.message;
+        }
+
         return {
             success: false,
             error: {
-                message: error instanceof Error ? error.message : "Something went wrong. Please try again later.",
+                message,
             },
             payload: formData,
         };
