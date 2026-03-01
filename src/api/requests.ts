@@ -9,12 +9,11 @@ import {
     ProductsResponse,
 } from "./types";
 
-export const fetchAuthLogin = (params: AuthLoginDTO): Promise<AuthLoginResponse> =>
-    apiClient.post(ENDPOINTS.auth.login, params);
+export const fetchAuthLogin = (data: AuthLoginDTO) => apiClient.post<AuthLoginResponse>(ENDPOINTS.auth.login, data);
 
-export const fetchAuthMe = (): Promise<AuthMeResponse> => apiClient.get(ENDPOINTS.auth.me);
+export const fetchAuthMe = () => apiClient.get<AuthMeResponse>(ENDPOINTS.auth.me);
 
-export const fetchAuthRefresh = (params: AuthRefreshDTO): Promise<AuthRefreshResponse> =>
-    apiClient.post(ENDPOINTS.auth.refresh, params);
+export const fetchAuthRefresh = (data?: AuthRefreshDTO) =>
+    apiClient.post<AuthRefreshResponse>(ENDPOINTS.auth.refresh, data);
 
-export const fetchProducts = (): Promise<ProductsResponse> => apiClient.get(ENDPOINTS.products);
+export const fetchProducts = () => apiClient.get<ProductsResponse>(ENDPOINTS.products);
