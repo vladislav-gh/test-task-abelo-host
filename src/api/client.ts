@@ -2,7 +2,7 @@ import type { AxiosError, InternalAxiosRequestConfig } from "axios";
 
 import axios from "axios";
 
-import { authCookiesGet, authCookiesSet } from "@/components/auth";
+import { authCookiesGet, authCookiesRemove, authCookiesSet } from "@/components/auth";
 import { IS_SERVER } from "@/config";
 
 import { API_URL } from "./config";
@@ -40,6 +40,8 @@ if (IS_SERVER) {
 
                     return apiClient(originalRequest);
                 } catch (error) {
+                    authCookiesRemove();
+
                     return Promise.reject(error);
                 }
             }
