@@ -13,11 +13,11 @@ import styles from "./styles.module.scss";
 export interface ProductCardProps extends ElProps<"div"> {
     image?: string;
     title: string;
-    category?: string;
+    caption?: string;
     price: number;
 }
 
-export function ProductCard({ className, image, title, category, price, ...restProps }: ProductCardProps) {
+export function ProductCard({ className, image, title, caption, price, ...restProps }: ProductCardProps) {
     const { user } = useUserState(["user"]);
 
     return (
@@ -40,7 +40,7 @@ export function ProductCard({ className, image, title, category, price, ...restP
                     {title}
                 </Text>
 
-                {category && <div className={styles.category}>{category}</div>}
+                {caption && <div className={styles.caption}>{caption}</div>}
             </div>
 
             <footer className={styles.footer}>

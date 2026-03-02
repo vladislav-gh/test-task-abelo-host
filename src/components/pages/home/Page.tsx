@@ -40,7 +40,7 @@ export async function PageHome({ params }: PageHomeProps) {
                         <ProductCard
                             key={product.id}
                             title={product.title}
-                            category={product.category}
+                            caption={product.brand}
                             price={product.price}
                             image={product.thumbnail}
                         />
