@@ -6,6 +6,12 @@ export interface Product {
     thumbnail: string;
 }
 
+export interface ProductsCategory {
+    slug: string;
+    name: string;
+    url: string;
+}
+
 export interface ProductsDTO {
     limit?: number;
 }
@@ -13,3 +19,5 @@ export interface ProductsDTO {
 export interface ProductsResponse {
     products: Product[];
 }
+
+export type ProductsCategoriesResponse = ProductsCategory[];

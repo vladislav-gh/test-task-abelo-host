@@ -6,5 +6,9 @@ export const ENDPOINTS = {
         me: "/auth/me",
         refresh: "/auth/refresh",
     },
-    products: "/products",
+    products: {
+        list: "/products",
+        categories: "/products/categories",
+        inCategory: (slug: string) => `/products/category/${slug}`,
+    },
 };

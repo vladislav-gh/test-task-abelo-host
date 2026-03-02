@@ -1,0 +1,2 @@
+export const PRODUCTS_PER_PAGE = 12;
+export const PRODUCTS_CATEGORIES_MAX_COUNT = 6;

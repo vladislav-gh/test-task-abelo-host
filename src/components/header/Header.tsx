@@ -1,6 +1,7 @@
 import { Icon, Link } from "@/components/ui";
 import { PAGES } from "@/config";
 
+import { Categories } from "./categories";
 import { Nav } from "./Nav";
 
 import styles from "./styles.module.scss";
@@ -16,6 +17,8 @@ export function Header() {
 
                 <Nav />
             </div>
+
+            <Categories />
         </header>
     );
 }

@@ -1,0 +1,52 @@
+.categories {
+    display: flex;
+    overflow: hidden;
+    overflow-x: auto;
+    scrollbar-width: 0;
+    background-color: f-color(primary, 0.25);
+    -webkit-overflow-scrolling: touch;
+
+    &::-webkit-scrollbar {
+        display: none;
+        width: 0;
+        height: 0;
+    }
+
+    .container {
+        @include container;
+
+        display: flex;
+        flex-grow: 1;
+        flex-shrink: 0;
+        gap: 0.75rem;
+        align-items: center;
+        justify-content: space-between;
+        width: auto;
+        max-width: none;
+        padding-block: 0.5rem;
+
+        @include media(lg) {
+            gap: 1rem;
+            max-width: 80rem;
+            padding-block: 0.75rem;
+        }
+    }
+
+    .link {
+        flex-shrink: 0;
+        font-weight: bold;
+        opacity: 0.5;
+        transition: opacity $transition;
+
+        @include media(lg) {
+            &:hover {
+                opacity: 0.75;
+            }
+        }
+
+        &_active {
+            pointer-events: none;
+            opacity: 1;
+        }
+    }
+}
