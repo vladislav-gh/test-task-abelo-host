@@ -17,6 +17,8 @@ const fontLato = Lato({
     style: ["normal"],
 });
 
+export const dynamic = "force-static";
+
 export const metadata: Metadata = {
     icons: {
         icon: [
